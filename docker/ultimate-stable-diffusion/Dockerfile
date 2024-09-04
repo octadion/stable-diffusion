@@ -65,9 +65,9 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git /ComfyUI && \
 
 # Install Animatediff and Reactor for ComfyUI
 RUN cd /ComfyUI && \
-    git clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git custom_nodes/ComfyUI-AnimateDiff-Evolved && \
+    git clone https://github.com/guoyww/animatediff.git custom_nodes/AnimateDiff && \
     git clone https://github.com/Gourieff/comfyui-reactor-node.git custom_nodes/comfyui-reactor-node && \
-    cd custom_nodes/ComfyUI-AnimateDiff-Evolved && \
+    cd custom_nodes/AnimateDiff && \
     pip install -r requirements.txt && \
     cd ../comfyui-reactor-node && \
     pip install -r requirements.txt
