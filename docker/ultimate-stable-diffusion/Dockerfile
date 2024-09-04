@@ -65,11 +65,11 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git /ComfyUI && \
 
 # Install Animatediff and Reactor for ComfyUI
 RUN cd /ComfyUI && \
-    git clone https://github.com/guoyww/animatediff.git custom_nodes/animatediff && \
-    git clone https://github.com/re-vc/reactor.git custom_nodes/reactor && \
-    cd custom_nodes/animatediff && \
+    git clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git custom_nodes/ComfyUI-AnimateDiff-Evolved && \
+    git clone https://github.com/Gourieff/comfyui-reactor-node.git custom_nodes/comfyui-reactor-node && \
+    cd custom_nodes/ComfyUI-AnimateDiff-Evolved && \
     pip install -r requirements.txt && \
-    cd ../reactor && \
+    cd ../comfyui-reactor-node && \
     pip install -r requirements.txt
 
 # Create necessary directories and copy necessary files
@@ -81,7 +81,7 @@ RUN wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve
     wget https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors -O /comfy-models/sd_xl_refiner_1.0.safetensors
 
 # NGINX Proxy
-COPY --from=proxy nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Start Scripts
 COPY pre_start1.sh /pre_start1.sh
