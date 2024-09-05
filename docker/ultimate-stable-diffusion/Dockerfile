@@ -55,8 +55,8 @@ RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git && \
 
 # Install torch and xformers
 RUN cd /workspace/stable-diffusion-webui && \
-    pip install torch===${TORCH_VERSION} torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && \
-    pip install xformers==${XFORMERS_VERSION} --index-url https://download.pytorch.org/whl/cu118
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && \
+    pip install xformers --index-url https://download.pytorch.org/whl/cu118
 
 # Install DeForum
 RUN cd /workspace/stable-diffusion-webui && \
