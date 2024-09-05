@@ -37,8 +37,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
 RUN mkdir /sd-models && mkdir /cn-models && mkdir /comfy-models
 
 # Download models
-RUN wget https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.ckpt -O /sd-models/v1-5-pruned.ckpt && \
-    wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors -O /sd-models/sd_xl_base_1.0.safetensors && \
+RUN wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors -O /sd-models/sd_xl_base_1.0.safetensors && \
     wget https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors -O /sd-models/sd_xl_refiner_1.0.safetensors && \
     wget https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny.pth -O /cn-models/control_v11p_sd15_canny.pth && \
     wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors -O /comfy-models/sd_xl_base_1.0.safetensors && \
@@ -105,10 +104,6 @@ RUN cd /ComfyUI/custom_nodes && \
 
 # NGINX Proxy
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY readme.html /usr/share/nginx/html/readme.html
-
-# Copy the README.md
-COPY README.md /usr/share/nginx/html/README.md
 
 # Start Scripts
 COPY pre_start1.sh /pre_start1.sh
