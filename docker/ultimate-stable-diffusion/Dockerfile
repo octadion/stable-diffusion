@@ -104,8 +104,8 @@ RUN cd /ComfyUI/custom_nodes && \
     python install.py
 
 # NGINX Proxy
-COPY --from=proxy nginx.conf /etc/nginx/nginx.conf
-COPY --from=proxy readme.html /usr/share/nginx/html/readme.html
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY readme.html /usr/share/nginx/html/readme.html
 
 # Copy the README.md
 COPY README.md /usr/share/nginx/html/README.md
@@ -113,7 +113,7 @@ COPY README.md /usr/share/nginx/html/README.md
 # Start Scripts
 COPY pre_start1.sh /pre_start1.sh
 COPY pre_start2.sh /pre_start2.sh
-COPY --from=scripts start.sh /
+COPY start.sh /
 RUN chmod +x /start.sh && chmod +x /pre_start1.sh && chmod +x /pre_start2.sh
 
 SHELL ["/bin/bash", "--login", "-c"]
