@@ -83,7 +83,7 @@ COPY relauncher.py webui-user.sh /stable-diffusion-webui/
 
 # Install ComfyUI and extensions
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git && \
-    cd /ComfyUI && \
+    cd ComfyUI && \
     pip install -r requirements.txt && \
     git clone https://github.com/ltdrdata/ComfyUI-Manager.git custom_nodes/ComfyUI-Manager && \
     cd custom_nodes/ComfyUI-Manager && \
