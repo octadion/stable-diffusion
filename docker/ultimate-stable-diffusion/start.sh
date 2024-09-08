@@ -87,7 +87,10 @@ start_jupyter() {
 
 start_nginx
 
-execute_script "/pre_start1.sh" "/pre_start2.sh" "Running pre-start script..."
+execute_script "/pre_start1.sh" "Running pre-start1 script..."
+
+# Call the function to execute pre_start2.sh with a message
+execute_script "/pre_start2.sh" "Running pre-start2 script..."
 
 echo "Pod Started"
 
