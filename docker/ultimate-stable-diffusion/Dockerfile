@@ -90,13 +90,13 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git && \
     pip install -r requirements.txt
 
 # Install AnimateDiff for ComfyUI
-RUN cd /ComfyUI/custom_nodes && \
+RUN cd ComfyUI/custom_nodes && \
     git clone https://github.com/guoyww/animatediff.git && \
     cd animatediff && \
     pip install -r requirements.txt
 
 # Install ReActor for ComfyUI
-RUN cd /ComfyUI/custom_nodes && \
+RUN cd ComfyUI/custom_nodes && \
     git clone https://github.com/Gourieff/comfyui-reactor-node.git && \
     cd comfyui-reactor-node && \
     python install.py
